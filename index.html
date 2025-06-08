@@ -1,19 +1,371 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>My static Space</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="card">
-			<h1>Welcome to your static Space!</h1>
-			<p>You can modify this app directly by editing <i>index.html</i> in the Files and versions tab.</p>
-			<p>
-				Also don't forget to check the
-				<a href="https://huggingface.co/docs/hub/spaces" target="_blank">Spaces documentation</a>.
-			</p>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Digital Land Surveyors in Tamil Nadu | Birdscale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
+                        accent: '#38bdf8',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://birdscale.com/wp-content/uploads/2020/08/poster_vid.jpg') center/cover no-repeat;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .milestone-card {
+            background: rgba(30, 64, 175, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .step-card {
+            border-left: 3px solid #1e40af;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+                    <i class="fas fa-dove text-white text-xl"></i>
+                </div>
+                <h1 class="text-xl md:text-2xl font-bold text-dark">Birdscale</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-dark hover:text-primary font-medium">Services</a>
+                <a href="#how-it-works" class="text-dark hover:text-primary font-medium">Process</a>
+                <a href="#milestones" class="text-dark hover:text-primary font-medium">Milestones</a>
+                <a href="#clients" class="text-dark hover:text-primary font-medium">Clients</a>
+                <a href="#demo" class="text-dark hover:text-primary font-medium">Demo</a>
+            </nav>
+            <button class="md:hidden text-dark text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-overlay h-screen flex items-center">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Best Digital Land Surveyors in Tamil Nadu</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Revolutionizing land surveying with advanced drone technology and data analytics</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="bg-primary hover:bg-blue-800 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:-translate-y-1">Explore Services</a>
+                <a href="#demo" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:-translate-y-1">Request Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We deliver comprehensive land solutions with speed, precision, and efficiency using cutting-edge technologies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Inspection -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-primary">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-search text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Inspection</h3>
+                    <p class="text-gray-600 mb-4">With minimal man power and IR-Thermal integration, we are 4 times faster than traditional inspection with 70% more detailed data acquisition.</p>
+                    <a href="https://birdscale.com/services/inspection/" class="text-primary hover:text-blue-800 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <!-- Survey -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-map-marked-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Survey</h3>
+                    <p class="text-gray-600 mb-4">With a capacity of 1000+ acres per day, LIDAR based drones with RGB sensor and ground based GNSS enables high quality imaging and real time mapping.</p>
+                    <a href="https://birdscale.com/services/survey/" class="text-blue-500 hover:text-blue-700 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <!-- Construction -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-cyan-500">
+                    <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-hard-hat text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Construction</h3>
+                    <p class="text-gray-600 mb-4">The point cloud density of 1 million generates high quality 3D imagery while remote monitoring provides progress tracking and identifies issues.</p>
+                    <a href="https://birdscale.com/services/construction/" class="text-cyan-600 hover:text-cyan-800 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-home text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Real Estate</h3>
+                    <p class="text-gray-600 mb-4">Our cinematic drones and in-house production studio provides 5.2K 60fps suitable for all social media and television platforms at affordable cost.</p>
+                    <a href="https://birdscale.com/services/realestate/" class="text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <!-- Mining -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-amber-500">
+                    <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-mountain text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Mining</h3>
+                    <p class="text-gray-600 mb-4">Our drones improve overall efficiency of large mine sites by improving quarry management through live stockpile measurement and volumetric analysis.</p>
+                    <a href="https://birdscale.com/services/mining/" class="text-amber-600 hover:text-amber-800 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <!-- Agriculture -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-emerald-500">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-tractor text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Agriculture</h3>
+                    <p class="text-gray-600 mb-4">Optimize farming operations, increase crop production, and monitor crop growth. Sensors and digital imaging capabilities give farmers a richer picture of their fields.</p>
+                    <a href="https://birdscale.com/services/agriculture/" class="text-emerald-600 hover:text-emerald-800 font-semibold inline-flex items-center">View Details <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+            </div>
+
+            <!-- Special Services -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+                <!-- IoT Service -->
+                <div class="service-card flex flex-col md:flex-row items-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-6 border border-blue-100">
+                    <div class="mr-6 mb-4 md:mb-0">
+                        <img src="https://birdscale.com/wp-content/uploads/2021/07/iot_white.png" alt="IoT Technology" class="w-24 h-24 object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark mb-3">IoT Integration</h3>
+                        <p class="text-gray-600 mb-4">In an IoT setting, our drones act as mobile sensors to gather data and relay it back to cloud apps or analytics services for real-time insights.</p>
+                        <p class="text-blue-600 font-semibold">Real-time photogrammetry, mapping and mission-based solutions</p>
+                    </div>
+                </div>
+
+                <!-- Custom Drone Service -->
+                <div class="service-card flex flex-col md:flex-row items-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-6 border border-blue-100">
+                    <div class="mr-6 mb-4 md:mb-0">
+                        <img src="https://birdscale.com/wp-content/uploads/2021/07/custom-drone.png" alt="Customized Drone" class="w-24 h-24 object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Customized Drone Manufacture</h3>
+                        <p class="text-gray-600 mb-4">We provide custom-built drones based on client requirements and environments to ensure mission success under any conditions.</p>
+                        <p class="text-blue-600 font-semibold">Tailored solutions for specialized drone applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Working Process</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A systematic approach that delivers precise results efficiently</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+                    <img src="https://birdscale.com/wp-content/uploads/2020/07/illustrstion.png" alt="Working Process" class="mx-auto max-w-full lg:max-w-md">
+                </div>
+                <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Step 1 -->
+                    <div class="step-card p-6 bg-white shadow-md rounded-lg">
+                        <div class="text-5xl font-bold text-primary mb-3">1</div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Plan</h3>
+                        <p class="text-gray-600">Predefine boundaries with local guidelines and assess total timeline.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-card p-6 bg-white shadow-md rounded-lg">
+                        <div class="text-5xl font-bold text-primary mb-3">2</div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Capture</h3>
+                        <p class="text-gray-600">Deploy multiple drones coordinating with each other to capture data.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-card p-6 bg-white shadow-md rounded-lg">
+                        <div class="text-5xl font-bold text-primary mb-3">3</div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Analyze</h3>
+                        <p class="text-gray-600">Detailed analysis of captured data with Birdscale image processing engine.</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="step-card p-6 bg-white shadow-md rounded-lg">
+                        <div class="text-5xl font-bold text-primary mb-3">4</div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Deliver</h3>
+                        <p class="text-gray-600">Cloud-based data delivery with remote accessing capability and accuracy report.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones -->
+    <section id="milestones" class="py-16 relative bg-gray-100">
+        <div class="absolute inset-0 bg-gray-900 opacity-90" style="background-image: url('https://birdscale.com/wp-content/uploads/2020/08/OPT_3.jpg'); background-size: cover;"></div>
+        <div class="relative container mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Milestones</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-200 max-w-3xl mx-auto">We have wings to fly for you, with impressive results to show for it</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="milestone-card p-8 rounded-xl text-center backdrop-blur-sm">
+                    <p class="text-5xl font-bold text-primary">150+</p>
+                    <p class="text-white mt-2 font-semibold">No. of Projects</p>
+                </div>
+                <div class="milestone-card p-8 rounded-xl text-center backdrop-blur-sm">
+                    <p class="text-5xl font-bold text-primary">900+</p>
+                    <p class="text-white mt-2 font-semibold">Alignments Surveyed (in kms)</p>
+                </div>
+                <div class="milestone-card p-8 rounded-xl text-center backdrop-blur-sm">
+                    <p class="text-5xl font-bold text-primary">1200+</p>
+                    <p class="text-white mt-2 font-semibold">Assets Inspected</p>
+                </div>
+                <div class="milestone-card p-8 rounded-xl text-center backdrop-blur-sm">
+                    <p class="text-5xl font-bold text-primary">2500+</p>
+                    <p class="text-white mt-2 font-semibold">Area Surveyed (in sq.kms)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section id="clients" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Trusted By</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We love our clients and they love us - here are some of the organizations that trust our expertise</p>
+            </div>
+
+            <div class="logo-grid">
+                <img src="https://birdscale.com/wp-content/uploads/2020/10/OPT_Client_larsen_and_turbo.png" alt="Larsen & Toubro" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_tamilnadu_govt.png" alt="Tamil Nadu Government" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_rpp.png" alt="RPP" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_rpp_renacon.png" alt="Renacon" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_orissa_govt.png" alt="Orissa Government" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_tuv.png" alt="TUV" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_greenfield.png" alt="Greenfield" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_sun_network.png" alt="Sun Network" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2020/08/OPT_Client_marico.png" alt="Marico" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_cmk_projects.png" alt="CMK Projects" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_psg_group.png" alt="PSG Group" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2021/07/OPT_Client_vestas.png" alt="Vestas" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2022/01/rccl.jpg" alt="RCCL" class="h-16 object-contain mx-auto p-3">
+                <img src="https://birdscale.com/wp-content/uploads/2022/01/url.png" alt="URL" class="h-16 object-contain mx-auto p-3">
+            </div>
+
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold text-dark mb-6">We are more than just imaging</h3>
+                <p class="text-gray-600 max-w-3xl mx-auto mb-8">Available with wide range of output formats that guarantees customers exactly what they need</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-16 bg-gradient-to-br from-primary to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Wanna see our work?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-10">A personalized demo can be arranged to showcase our capabilities and how we can help with your specific requirements.</p>
+            <form class="max-w-2xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-4 mb-6">
+                    <input type="text" placeholder="Your Name" class="px-6 py-3 rounded-full text-gray-800 flex-grow">
+                    <input type="email" placeholder="Email Address" class="px-6 py-3 rounded-full text-gray-800 flex-grow">
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 mb-6">
+                    <input type="tel" placeholder="Phone Number" class="px-6 py-3 rounded-full text-gray-800 flex-grow">
+                    <select class="px-6 py-3 rounded-full text-gray-800 flex-grow">
+                        <option>Select Your Industry</option>
+                        <option>Construction</option>
+                        <option>Mining</option>
+                        <option>Agriculture</option>
+                        <option>Real Estate</option>
+                        <option>Government</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <textarea placeholder="Tell us about your requirements..." class="w-full px-6 py-3 rounded-2xl text-gray-800 mb-6 h-32"></textarea>
+                <button type="submit" class="bg-white hover:bg-gray-100 text-primary px-10 py-4 rounded-full text-lg font-bold transition duration-300 transform hover:-translate-y-1">Request Demo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-3">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center mr-2">
+                            <i class="fas fa-dove text-white text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Birdscale</h3>
+                    </div>
+                    <p class="text-sm max-w-xs">Pioneering digital land surveying with cutting-edge drone technology and analytics.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-twitter text-lg"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in text-lg"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-instagram text-lg"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2023 Birdscale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SrikaanthChockalingam/bird-scale" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
