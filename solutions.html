@@ -49,19 +49,93 @@
             mobileNav.classList.toggle('hidden');
         });
     </script>
-    <main>
-        <h1>Solutions | Spectral Intelligence, Digital Twins, Advanced Sensing | BirdScale</h1>
-        <ul>
-            <li>Remote Progress Intelligence</li>
-            <li>Digital Twin Creation</li>
-            <li>Aerial Mapping & Intelligence</li>
-            <li>Terrain & Environmental Mapping</li>
-            <li>Smart Inspection & Visualization</li>
-            <li>Predictive Simulation & Planning</li>
-            <li>Hydrographic & Subsurface Intelligence</li>
-            <li>Port & Border Situational Awareness</li>
-            <li>Advanced Sensing Skill Programs</li>
-        </ul>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="mb-10 text-center fade-in-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Solutions</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Empowering industries with advanced spectral intelligence, digital twins, and next-generation sensing. Explore our comprehensive suite of solutions designed for real-world impact.</p>
+        </section>
+        <!-- Solutions Grid -->
+        <section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-satellite-dish text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Remote Progress Intelligence</h3>
+                    <p class="text-gray-600">Monitor and analyze project progress remotely with real-time data and AI-driven insights.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-cube text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Digital Twin Creation</h3>
+                    <p class="text-gray-600">Build accurate digital replicas of assets for enhanced management and predictive maintenance.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-map-marked-alt text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Aerial Mapping & Intelligence</h3>
+                    <p class="text-gray-600">High-resolution mapping and intelligence for infrastructure, agriculture, and environment.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-mountain text-4xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Terrain & Environmental Mapping</h3>
+                    <p class="text-gray-600">Detailed terrain and environmental analysis for planning, compliance, and sustainability.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-search text-4xl text-pink-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Smart Inspection & Visualization</h3>
+                    <p class="text-gray-600">Automated inspections and immersive visualizations for safer, smarter operations.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-chart-line text-4xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Predictive Simulation & Planning</h3>
+                    <p class="text-gray-600">Simulate scenarios and plan proactively with advanced modeling and analytics.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-water text-4xl text-cyan-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Hydrographic & Subsurface Intelligence</h3>
+                    <p class="text-gray-600">Comprehensive water and subsurface mapping for infrastructure and environment.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-ship text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Port & Border Situational Awareness</h3>
+                    <p class="text-gray-600">Enhance security and efficiency at ports and borders with real-time situational awareness.</p>
+                </div>
+                <div class="solution-card bent-animate bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-up">
+                    <i class="fas fa-graduation-cap text-4xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Advanced Sensing Skill Programs</h3>
+                    <p class="text-gray-600">Upskill your team with hands-on training in advanced sensing and data analytics.</p>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer class="w-full bg-gray-900 text-white py-6 mt-12 fixed left-0 right-0 bottom-0 z-50">
+      <div class="container mx-auto px-4 text-center">
+        &copy; 2025 BirdScale. All rights reserved.
+      </div>
+    </footer>
+    <style>
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    </style>
+    <script>
+    // Scroll animation for fade-in-up
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.fade-in-up');
+      const windowHeight = window.innerHeight;
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
 </body>
 </html>
