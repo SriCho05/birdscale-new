@@ -51,33 +51,170 @@
             mobileNav.classList.toggle('hidden');
         });
     </script>
-    <main class="container mx-auto px-4 py-8">
-        <h1 class="text-2xl md:text-4xl font-bold mb-6 text-center">Industries We Serve | BirdScale Spectral Intelligence Solutions</h1>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">Infrastructure Intelligence</li>
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">Energy Intelligence</li>
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">Smart Agriculture</li>
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">ESG & Environmental Intelligence</li>
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">Water Infrastructure Intelligence</li>
-            <li class="bg-white rounded-lg shadow p-4 text-lg font-semibold">Special Projects & Security</li>
-        </ul>
-    </main>
-    <footer class="bg-dark text-gray-300 py-10 mt-16" style="background:#0f172a; color:#ccc; padding:2rem 0; margin-top:2rem;">
-        <div class="container mx-auto px-4">
-            <nav class="mb-6 flex flex-wrap justify-center gap-6" style="justify-content:center; gap:1.5rem;">
-                <a href="index.html" style="color:#fff; text-decoration:none; font-weight:600;">Home</a>
-                <a href="industries.html" style="color:#fff; text-decoration:none; font-weight:600;">Industries</a>
-                <a href="solutions.html" style="color:#fff; text-decoration:none; font-weight:600;">Solutions</a>
-                <a href="aerial-mapping.html" style="color:#fff; text-decoration:none; font-weight:600;">Aerial Mapping</a>
-                <a href="clients.html" style="color:#fff; text-decoration:none; font-weight:600;">Clients</a>
-                <a href="smart-projects.html" style="color:#fff; text-decoration:none; font-weight:600;">Smart Projects</a>
-                <a href="blog.html" style="color:#fff; text-decoration:none; font-weight:600;">Blog</a>
-                <a href="team.html" style="color:#fff; text-decoration:none; font-weight:600;">Team BirdScale</a>
-            </nav>
-            <div style="border-top:1px solid #333; margin-top:2rem; padding-top:1rem; text-align:center; font-size:0.9rem;">
-                &copy; 2023 Birdscale. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <!-- Only the industry cards section below -->
+    <section class="industry-cards-flex">
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1011/800/1200');">
+        <div class="industry-main-text">Infrastructure Intelligence</div>
+        <div class="industry-info inside">Advanced analytics and digital twin solutions for modern infrastructure projects.</div>
+      </div>
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1015/800/1200');">
+        <div class="industry-main-text">Energy Intelligence</div>
+        <div class="industry-info inside">Real-time monitoring and predictive analytics for energy assets and grids.</div>
+      </div>
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1016/800/1200');">
+        <div class="industry-main-text">Smart Agriculture</div>
+        <div class="industry-info inside">Precision farming, crop health monitoring, and yield optimization with AI.</div>
+      </div>
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1025/800/1200');">
+        <div class="industry-main-text">ESG & Environmental Intelligence</div>
+        <div class="industry-info inside">Environmental monitoring, compliance, and sustainability analytics.</div>
+      </div>
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1043/800/1200');">
+        <div class="industry-main-text">Water Infrastructure Intelligence</div>
+        <div class="industry-info inside">Water resource mapping, quality monitoring, and infrastructure analytics.</div>
+      </div>
+      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1050/800/1200');">
+        <div class="industry-main-text">Special Projects & Security</div>
+        <div class="industry-info inside">Custom intelligence, security, and defense solutions for unique challenges.</div>
+      </div>
+    </section>
+    <style>
+    .industry-cards-flex {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      height: 80vh;
+      min-height: 400px;
+      margin: 0;
+      padding: 0;
+      gap: 0;
+      box-sizing: border-box;
+    }
+    .industry-card {
+      flex: 1 1 0%;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+    }
+    .industry-card:hover,
+    .industry-card:focus {
+      flex: 2 1 0%;
+      z-index: 2;
+    }
+    .industry-card:hover::before,
+    .industry-card:focus::before {
+      background: linear-gradient(to right, rgba(255,0,0,0.7), rgba(0,0,255,0.7));
+    }
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5));
+      transition: background 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 1;
+    }
+    .industry-main-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-align: center;
+      z-index: 2;
+      transition: color 0.3s, left 0.3s, transform 0.3s;
+      user-select: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    .industry-card:hover .industry-main-text,
+    .industry-card:focus .industry-main-text {
+      left: 20%;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    .industry-info.inside {
+      position: absolute;
+      left: 55%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0;
+      min-width: 220px;
+      max-width: 320px;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 3;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .industry-card:hover .industry-info.inside,
+    .industry-card:focus .industry-info.inside {
+      opacity: 1;
+      transform: translate(-10%, -50%) scale(1.05);
+    }
+    @media (max-width: 767px) {
+      .industry-cards-flex {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+      }
+      .industry-card {
+        min-width: 100vw;
+        width: 100vw;
+        height: 16.66vh;
+        max-height: 200px;
+      }
+      .industry-main-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1.1rem;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+      .industry-info.inside {
+        position: static;
+        opacity: 1;
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        font-size: 0.95rem;
+        min-width: unset;
+        max-width: unset;
+        margin-top: 0.5rem;
+        box-shadow: none;
+        padding: 0.8rem 1rem;
+        transform: none;
+        display: none;
+      }
+      .industry-card:hover .industry-info.inside,
+      .industry-card:focus .industry-info.inside {
+        display: block;
+        opacity: 1;
+      }
+    }
+    </style>
 </body>
 </html>
