@@ -51,27 +51,27 @@
     </script>
     <!-- Only the industry cards section below -->
     <section class="industry-cards-flex">
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1011/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1011/800/1200');">
         <div class="industry-main-text">Infrastructure Intelligence</div>
         <div class="industry-info inside">Advanced analytics and digital twin solutions for modern infrastructure projects.</div>
       </div>
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1015/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1015/800/1200');">
         <div class="industry-main-text">Energy Intelligence</div>
         <div class="industry-info inside">Real-time monitoring and predictive analytics for energy assets and grids.</div>
       </div>
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1016/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1016/800/1200');">
         <div class="industry-main-text">Smart Agriculture</div>
         <div class="industry-info inside">Precision farming, crop health monitoring, and yield optimization with AI.</div>
       </div>
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1025/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1025/800/1200');">
         <div class="industry-main-text">ESG & Environmental Intelligence</div>
         <div class="industry-info inside">Environmental monitoring, compliance, and sustainability analytics.</div>
       </div>
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1043/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1043/800/1200');">
         <div class="industry-main-text">Water Infrastructure Intelligence</div>
         <div class="industry-info inside">Water resource mapping, quality monitoring, and infrastructure analytics.</div>
       </div>
-      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1050/800/1200');">
+      <div class="industry-card fade-in-up bent-animate" style="background-image: url('https://picsum.photos/id/1050/800/1200');">
         <div class="industry-main-text">Special Projects & Security</div>
         <div class="industry-info inside">Custom intelligence, security, and defense solutions for unique challenges.</div>
       </div>
@@ -233,7 +233,31 @@
     .industry-card:nth-child(even):focus::before {
       background: rgba(0, 0, 255, 0.7); /* blue overlay */
     }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     </style>
+    <script>
+    // Scroll animation for fade-in-up
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.fade-in-up');
+      const windowHeight = window.innerHeight;
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
     <footer class="w-full bg-gray-900 text-white py-6 mt-12 fixed left-0 right-0 bottom-0 z-50">
       <div class="container mx-auto px-4 text-center">
         &copy; 2025 BirdScale. All rights reserved.
