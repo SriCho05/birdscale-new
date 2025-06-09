@@ -93,7 +93,7 @@
       min-width: 0;
       min-height: 0;
       height: 100%;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      transition: flex-basis 0.3s cubic-bezier(.4,0,.2,1); /* Only animate width */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -110,6 +110,7 @@
     .industry-card:focus {
       flex: 2 1 0%;
       z-index: 2;
+      /* Remove any height scaling, only width increases */
     }
     .industry-card:hover::before,
     .industry-card:focus::before {
@@ -233,7 +234,7 @@
       background: rgba(0, 0, 255, 0.7); /* blue overlay */
     }
     </style>
-    <footer class="w-full bg-gray-900 text-white py-6 mt-12 absolute left-0 right-0 bottom-0">
+    <footer class="w-full bg-gray-900 text-white py-6 mt-12 fixed left-0 right-0 bottom-0 z-50">
       <div class="container mx-auto px-4 text-center">
         &copy; 2025 BirdScale. All rights reserved.
       </div>
