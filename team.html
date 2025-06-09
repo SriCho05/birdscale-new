@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Meet Team BirdScale</title>
+    <meta name="description" content="Meet the leadership, AI, field, and advisory teams behind BirdScale's innovation in digital surveying and intelligence.">
+    <style>
+      body, html {
+        background: #000 !important;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header with BirdScale logo and nav -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="../birdscale_logo_square.png" alt="BirdScale Logo" class="h-16 w-auto mr-3" />
+            </div>
+            <nav class="hidden md:flex items-center relative w-full justify-center">
+                <div class="flex w-full max-w-5xl justify-between items-center">
+                    <a href="index.html" class="text-dark hover:text-primary font-medium">Home</a>
+                    <div class="relative nav-dropdown" id="industriesDropdown">
+                        <button class="flex items-center text-dark hover:text-primary font-medium focus:outline-none transition dropdown-btn">
+                            <span>Industries</span>
+                            <i class="fas fa-chevron-down ml-1 transition-transform duration-200"></i>
+                        </button>
+                        <!-- Dropdown placeholder, not functional on this page -->
+                    </div>
+                    <div class="relative nav-dropdown" id="solutionsDropdown">
+                        <button class="flex items-center text-dark hover:text-primary font-medium focus:outline-none transition dropdown-btn">
+                            <span>Solutions</span>
+                            <i class="fas fa-chevron-down ml-1 transition-transform duration-200"></i>
+                        </button>
+                        <!-- Dropdown placeholder, not functional on this page -->
+                    </div>
+                    <a href="aerial-mapping.html" class="text-dark hover:text-primary font-medium">Aerial Mapping</a>
+                    <a href="smart-projects.html" class="text-dark hover:text-primary font-medium">Smart Projects</a>
+                    <a href="blog.html" class="text-dark hover:text-primary font-medium">Blog</a>
+                    <a href="team.html" class="text-dark hover:text-primary font-medium">Team BirdScale</a>
+                </div>
+            </nav>
+            <button class="md:hidden text-dark text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-10">Meet Team BirdScale</h1>
+        <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">Our team brings together expertise in AI, field operations, engineering, and advisory to deliver cutting-edge digital surveying and intelligence solutions.</p>
+        <!-- ChromaGrid-inspired team showcase -->
+        <div class="flex justify-center">
+            <div class="w-full max-w-6xl" id="team-chromagrid"></div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-10 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <nav class="flex flex-wrap justify-center gap-6 mb-4 transition-all duration-300">
+                    <a href="index.html" class="hover:text-white font-semibold">Home</a>
+                    <a href="industries.html" class="hover:text-white font-semibold">Industries</a>
+                    <a href="solutions.html" class="hover:text-white font-semibold">Solutions</a>
+                    <a href="aerial-mapping.html" class="hover:text-white font-semibold">Aerial Mapping</a>
+                    <a href="clients.html" class="hover:text-white font-semibold">Clients</a>
+                    <a href="smart-projects.html" class="hover:text-white font-semibold">Smart Projects</a>
+                    <a href="blog.html" class="hover:text-white font-semibold">Blog</a>
+                    <a href="team.html" class="hover:text-white font-semibold">Team BirdScale</a>
+                </nav>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2023 Birdscale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+    // Team data for ChromaGrid
+    const teamItems = [
+      {
+        image: "https://i.pravatar.cc/300?img=8",
+        title: "Alex Rivera",
+        subtitle: "CEO & Full Stack Developer",
+        handle: "@alexrivera",
+        borderColor: "#4F46E5",
+        gradient: "linear-gradient(145deg,#4F46E5,#000)",
+        url: "https://github.com/",
+      },
+      {
+        image: "https://i.pravatar.cc/300?img=11",
+        title: "Jordan Chen",
+        subtitle: "CTO & DevOps Engineer",
+        handle: "@jordanchen",
+        borderColor: "#10B981",
+        gradient: "linear-gradient(210deg,#10B981,#000)",
+        url: "https://linkedin.com/in/",
+      },
+      {
+        image: "https://i.pravatar.cc/300?img=3",
+        title: "Morgan Blake",
+        subtitle: "UI/UX Designer",
+        handle: "@morganblake",
+        borderColor: "#F59E0B",
+        gradient: "linear-gradient(165deg,#F59E0B,#000)",
+        url: "https://dribbble.com/",
+      },
+      {
+        image: "https://i.pravatar.cc/300?img=16",
+        title: "Casey Park",
+        subtitle: "Data Scientist",
+        handle: "@caseypark",
+        borderColor: "#EF4444",
+        gradient: "linear-gradient(195deg,#EF4444,#000)",
+        url: "https://kaggle.com/",
+      },
+      {
+        image: "https://i.pravatar.cc/300?img=25",
+        title: "Sam Kim",
+        subtitle: "Mobile Developer",
+        handle: "@thesamkim",
+        borderColor: "#8B5CF6",
+        gradient: "linear-gradient(225deg,#8B5CF6,#000)",
+        url: "https://github.com/",
+      },
+      {
+        image: "https://i.pravatar.cc/300?img=60",
+        title: "Tyler Rodriguez",
+        subtitle: "Cloud Architect",
+        handle: "@tylerrod",
+        borderColor: "#06B6D4",
+        gradient: "linear-gradient(135deg,#06B6D4,#000)",
+        url: "https://aws.amazon.com/",
+      },
+    ];
+
+    // ChromaGrid implementation (vanilla JS, inspired by React version)
+    function createChromaGrid({ items, radius = 300, damping = 0.45, fadeOut = 0.6, ease = "power3.out" }) {
+      const root = document.createElement('div');
+      root.className = "relative w-full h-[600px] flex flex-wrap justify-center items-start gap-6";
+      root.style.setProperty('--r', radius + 'px');
+      root.style.setProperty('--x', '50%');
+      root.style.setProperty('--y', '50%');
+      let pos = { x: 0, y: 0 };
+      let setX = (v) => root.style.setProperty('--x', v + 'px');
+      let setY = (v) => root.style.setProperty('--y', v + 'px');
+      // Initial center
+      setTimeout(() => {
+        const rect = root.getBoundingClientRect();
+        pos = { x: rect.width / 2, y: rect.height / 2 };
+        setX(pos.x);
+        setY(pos.y);
+      }, 100);
+      // Fade overlay
+      const fade = document.createElement('div');
+      fade.className = "absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40";
+      Object.assign(fade.style, {
+        backdropFilter: "grayscale(1) brightness(0.78)",
+        WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
+        background: "rgba(0,0,0,0.001)",
+        maskImage:
+          "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
+        WebkitMaskImage:
+          "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
+        opacity: 1,
+      });
+      root.appendChild(fade);
+      // Cards
+      items.forEach((c, i) => {
+        const card = document.createElement('article');
+        card.className = "chromagrid-card group relative flex flex-col w-[300px] rounded-[20px] overflow-hidden border-2 border-transparent transition-colors duration-300 cursor-pointer bg-black";
+        card.style.borderColor = c.borderColor || 'transparent';
+        card.style.background = 'black';
+        // Spotlight effect (color gradient only in a radius around cursor)
+        const spot = document.createElement('div');
+        spot.className = "chromagrid-spot absolute inset-0 pointer-events-none transition-opacity duration-500 z-0"; // z-0 so it's behind content
+        spot.style.background = `radial-gradient(circle 220px at var(--mouse-x,50%) var(--mouse-y,50%), ${c.borderColor} 0%, rgba(0,0,0,0.0) 80%, transparent 100%)`;
+        spot.style.opacity = 0;
+        card.appendChild(spot);
+        // Image
+        const imgWrap = document.createElement('div');
+        imgWrap.className = "relative z-10 flex-1 p-[10px] box-border";
+        const img = document.createElement('img');
+        img.src = c.image;
+        img.alt = c.title;
+        img.loading = "lazy";
+        img.className = "w-full h-full object-cover rounded-[10px]";
+        imgWrap.appendChild(img);
+        card.appendChild(imgWrap);
+        // Footer
+        const footer = document.createElement('footer');
+        footer.className = "relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1";
+        const h3 = document.createElement('h3');
+        h3.className = "m-0 text-[1.05rem] font-semibold";
+        h3.textContent = c.title;
+        footer.appendChild(h3);
+        if (c.handle) {
+          const handle = document.createElement('span');
+          handle.className = "text-[0.95rem] opacity-80 text-right";
+          handle.textContent = c.handle;
+          footer.appendChild(handle);
+        }
+        const subtitle = document.createElement('p');
+        subtitle.className = "m-0 text-[0.85rem] opacity-85";
+        subtitle.textContent = c.subtitle;
+        footer.appendChild(subtitle);
+        card.appendChild(footer);
+        root.appendChild(card);
+      });
+      // Mouse move/fade logic
+      root.onpointermove = (e) => {
+        const r = root.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        gsap.to(pos, {
+          x,
+          y,
+          duration: damping,
+          ease,
+          onUpdate: () => {
+            setX(pos.x);
+            setY(pos.y);
+          },
+          overwrite: true,
+        });
+        gsap.to(fade, { opacity: 0, duration: 0.25, overwrite: true });
+      };
+      root.onpointerleave = () => {
+        gsap.to(fade, { opacity: 1, duration: fadeOut, overwrite: true });
+      };
+      return root;
+    }
+    // Mount ChromaGrid
+    document.addEventListener('DOMContentLoaded', function() {
+      const mount = document.getElementById('team-chromagrid');
+      if (mount) {
+        mount.appendChild(createChromaGrid({ items: teamItems }));
+      }
+    });
+    // Track mouse position globally and update all cards' spotlights based on proximity
+    let globalMouse = { x: 0, y: 0 };
+    document.addEventListener('mousemove', function(e) {
+      globalMouse.x = e.clientX;
+      globalMouse.y = e.clientY;
+      document.querySelectorAll('.chromagrid-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = globalMouse.x - rect.left;
+        const y = globalMouse.y - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dist = Math.sqrt((globalMouse.x - cx) ** 2 + (globalMouse.y - cy) ** 2);
+        // Make the glow more obvious: increase radius to 350px
+        const spot = card.querySelector('.chromagrid-spot');
+        if (spot) {
+          spot.style.opacity = dist < 350 ? 1 : 0;
+        }
+      });
+    });
+    </script>
+</body>
+</html>
