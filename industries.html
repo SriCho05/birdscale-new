@@ -53,27 +53,27 @@
     </script>
     <!-- Only the industry cards section below -->
     <section class="industry-cards-flex">
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1011/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1011/800/1200');">
         <div class="industry-main-text">Infrastructure Intelligence</div>
         <div class="industry-info inside">Advanced analytics and digital twin solutions for modern infrastructure projects.</div>
       </div>
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1015/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1015/800/1200');">
         <div class="industry-main-text">Energy Intelligence</div>
         <div class="industry-info inside">Real-time monitoring and predictive analytics for energy assets and grids.</div>
       </div>
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1016/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1016/800/1200');">
         <div class="industry-main-text">Smart Agriculture</div>
         <div class="industry-info inside">Precision farming, crop health monitoring, and yield optimization with AI.</div>
       </div>
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1025/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1025/800/1200');">
         <div class="industry-main-text">ESG & Environmental Intelligence</div>
         <div class="industry-info inside">Environmental monitoring, compliance, and sustainability analytics.</div>
       </div>
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1043/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1043/800/1200');">
         <div class="industry-main-text">Water Infrastructure Intelligence</div>
         <div class="industry-info inside">Water resource mapping, quality monitoring, and infrastructure analytics.</div>
       </div>
-      <div class="industry-card" style="background-image: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), url('https://picsum.photos/id/1050/800/1200');">
+      <div class="industry-card" style="background-image: url('https://picsum.photos/id/1050/800/1200');">
         <div class="industry-main-text">Special Projects & Security</div>
         <div class="industry-info inside">Custom intelligence, security, and defense solutions for unique challenges.</div>
       </div>
@@ -115,7 +115,7 @@
     }
     .industry-card:hover::before,
     .industry-card:focus::before {
-      background: linear-gradient(to right, rgba(255,0,0,0.7), rgba(0,0,255,0.7));
+      background: rgba(74, 144, 226, 0.7); /* blue overlay */
     }
     .industry-card::before {
       content: '';
@@ -152,7 +152,6 @@
       top: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      background: rgba(0,0,0,0.7);
       color: #fff;
       font-size: 1rem;
       font-weight: 500;
@@ -163,7 +162,6 @@
       pointer-events: none;
       transition: opacity 0.3s, transform 0.3s;
       z-index: 3;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       text-align: center;
       display: flex;
       align-items: center;
@@ -198,7 +196,6 @@
       .industry-info.inside {
         position: static;
         opacity: 1;
-        background: rgba(0,0,0,0.7);
         color: #fff;
         font-size: 0.95rem;
         min-width: unset;
@@ -214,6 +211,28 @@
         display: block;
         opacity: 1;
       }
+    }
+    .industry-card:nth-child(odd) {
+      background-color: #4a90e2; /* blue */
+    }
+    .industry-card:nth-child(even) {
+      background-color: #50e3c2; /* teal */
+    }
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      transition: background 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 1;
+    }
+    .industry-card:nth-child(odd):hover::before,
+    .industry-card:nth-child(odd):focus::before {
+      background: rgba(255, 0, 0, 0.7); /* red overlay */
+    }
+    .industry-card:nth-child(even):hover::before,
+    .industry-card:nth-child(even):focus::before {
+      background: rgba(0, 0, 255, 0.7); /* blue overlay */
     }
     </style>
 </body>
