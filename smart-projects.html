@@ -21,7 +21,6 @@
                     <a href="industries.html" class="text-dark hover:text-primary font-medium">Industries</a>
                     <a href="solutions.html" class="text-dark hover:text-primary font-medium">Solutions</a>
                     <a href="aerial-mapping.html" class="text-dark hover:text-primary font-medium">Aerial Mapping</a>
-                    <a href="clients.html" class="text-dark hover:text-primary font-medium">Clients</a>
                     <a href="smart-projects.html" class="text-dark hover:text-primary font-medium">Smart Projects</a>
                     <a href="blog.html" class="text-dark hover:text-primary font-medium">Blog</a>
                     <a href="team.html" class="text-dark hover:text-primary font-medium">Team BirdScale</a>
@@ -37,7 +36,6 @@
             <a href="industries.html" class="block py-2 text-dark hover:text-primary font-medium">Industries</a>
             <a href="solutions.html" class="block py-2 text-dark hover:text-primary font-medium">Solutions</a>
             <a href="aerial-mapping.html" class="block py-2 text-dark hover:text-primary font-medium">Aerial Mapping</a>
-            <a href="clients.html" class="block py-2 text-dark hover:text-primary font-medium">Clients</a>
             <a href="smart-projects.html" class="block py-2 text-dark hover:text-primary font-medium">Smart Projects</a>
             <a href="blog.html" class="block py-2 text-dark hover:text-primary font-medium">Blog</a>
             <a href="team.html" class="block py-2 text-dark hover:text-primary font-medium">Team BirdScale</a>
@@ -51,17 +49,57 @@
             mobileNav.classList.toggle('hidden');
         });
     </script>
-    <main>
-        <h1>Smart Projects | BirdScale Spectral Intelligence in Action</h1>
-        <ul>
-            <li>Infrastructure</li>
-            <li>Energy</li>
-            <li>Agriculture</li>
-            <li>ESG / Environment</li>
-            <li>Water</li>
-            <li>Special Projects</li>
-        </ul>
-        <p>Project cards and details coming soon.</p>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="mb-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Smart Projects in Action</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how BirdScale's spectral intelligence and digital solutions are transforming industries through real-world projects.</p>
+        </section>
+        <!-- Project Cards Grid -->
+        <section>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6">Featured Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="Infrastructure" class="h-40 w-full object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Smart Bridge Monitoring</h3>
+                        <p class="text-gray-600 mb-4 flex-1">AI-powered sensors and spectral analysis for real-time infrastructure health monitoring.</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Infrastructure</span>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Energy" class="h-40 w-full object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Solar Farm Digital Twin</h3>
+                        <p class="text-gray-600 mb-4 flex-1">Creating a digital twin for predictive maintenance and performance optimization in renewable energy.</p>
+                        <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Energy</span>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80" alt="Agriculture" class="h-40 w-full object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Precision Agriculture Mapping</h3>
+                        <p class="text-gray-600 mb-4 flex-1">Multispectral drone mapping for crop health and yield optimization.</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Agriculture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Project Categories -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6">Project Categories</h2>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold">Infrastructure</span>
+                <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-semibold">Energy</span>
+                <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold">Agriculture</span>
+                <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-semibold">ESG / Environment</span>
+                <span class="bg-cyan-100 text-cyan-800 px-4 py-2 rounded-full font-semibold">Water</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold">Special Projects</span>
+            </div>
+        </section>
     </main>
 </body>
 </html>

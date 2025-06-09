@@ -51,15 +51,73 @@
             mobileNav.classList.toggle('hidden');
         });
     </script>
-    <main>
-        <h1>Our Clients</h1>
-        <section>
-            <h2>Key Clients</h2>
-            <p>Logos and testimonials coming soon.</p>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="mb-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Clients</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Trusted by leading organizations across industries. Explore our client partnerships and their success stories with BirdScale.</p>
         </section>
+        <!-- Client Logos Grid -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">Key Clients</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Client 1" class="h-12 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Client 2" class="h-12 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Client 3" class="h-12 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="Client 4" class="h-12 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                    <p class="text-gray-700 italic mb-4">“BirdScale’s spectral intelligence platform has transformed our project monitoring. The insights are actionable and reliable.”</p>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="h-10 w-10 rounded-full">
+                        <div>
+                            <div class="font-bold text-gray-800">Amit Sharma</div>
+                            <div class="text-gray-500 text-sm">Project Lead, Infrastructure Co.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                    <p class="text-gray-700 italic mb-4">“The BirdScale team is responsive and innovative. Their digital twin solutions are best-in-class.”</p>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="h-10 w-10 rounded-full">
+                        <div>
+                            <div class="font-bold text-gray-800">Priya Desai</div>
+                            <div class="text-gray-500 text-sm">CTO, Smart Energy Ltd.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Industry Distribution Section -->
         <section>
-            <h2>Industry-wise client distribution (optional)</h2>
-            <p>Details coming soon.</p>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">Industry-wise Client Distribution</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-blue-100 rounded-lg px-6 py-4 text-center w-48">
+                    <div class="text-3xl mb-2"><i class="fas fa-industry"></i></div>
+                    <div class="font-bold text-gray-800">Infrastructure</div>
+                    <div class="text-gray-600 text-sm">35%</div>
+                </div>
+                <div class="bg-green-100 rounded-lg px-6 py-4 text-center w-48">
+                    <div class="text-3xl mb-2"><i class="fas fa-leaf"></i></div>
+                    <div class="font-bold text-gray-800">Environment</div>
+                    <div class="text-gray-600 text-sm">20%</div>
+                </div>
+                <div class="bg-yellow-100 rounded-lg px-6 py-4 text-center w-48">
+                    <div class="text-3xl mb-2"><i class="fas fa-bolt"></i></div>
+                    <div class="font-bold text-gray-800">Energy</div>
+                    <div class="text-gray-600 text-sm">25%</div>
+                </div>
+                <div class="bg-purple-100 rounded-lg px-6 py-4 text-center w-48">
+                    <div class="text-3xl mb-2"><i class="fas fa-seedling"></i></div>
+                    <div class="font-bold text-gray-800">Agriculture</div>
+                    <div class="text-gray-600 text-sm">20%</div>
+                </div>
+            </div>
         </section>
     </main>
 </body>

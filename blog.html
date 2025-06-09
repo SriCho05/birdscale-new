@@ -21,7 +21,6 @@
                     <a href="industries.html" class="text-dark hover:text-primary font-medium">Industries</a>
                     <a href="solutions.html" class="text-dark hover:text-primary font-medium">Solutions</a>
                     <a href="aerial-mapping.html" class="text-dark hover:text-primary font-medium">Aerial Mapping</a>
-                    <a href="clients.html" class="text-dark hover:text-primary font-medium">Clients</a>
                     <a href="smart-projects.html" class="text-dark hover:text-primary font-medium">Smart Projects</a>
                     <a href="blog.html" class="text-dark hover:text-primary font-medium">Blog</a>
                     <a href="team.html" class="text-dark hover:text-primary font-medium">Team BirdScale</a>
@@ -37,7 +36,6 @@
             <a href="industries.html" class="block py-2 text-dark hover:text-primary font-medium">Industries</a>
             <a href="solutions.html" class="block py-2 text-dark hover:text-primary font-medium">Solutions</a>
             <a href="aerial-mapping.html" class="block py-2 text-dark hover:text-primary font-medium">Aerial Mapping</a>
-            <a href="clients.html" class="block py-2 text-dark hover:text-primary font-medium">Clients</a>
             <a href="smart-projects.html" class="block py-2 text-dark hover:text-primary font-medium">Smart Projects</a>
             <a href="blog.html" class="block py-2 text-dark hover:text-primary font-medium">Blog</a>
             <a href="team.html" class="block py-2 text-dark hover:text-primary font-medium">Team BirdScale</a>
@@ -51,22 +49,60 @@
             mobileNav.classList.toggle('hidden');
         });
     </script>
-    <main>
-        <h1>Blog | Insights from BirdScale</h1>
-        <section>
-            <h2>Blog Post Cards (initial placeholders)</h2>
-            <p>Coming soon.</p>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="mb-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Insights from BirdScale</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore the latest in spectral intelligence, digital twins, aerial mapping, and more. Stay updated with our expert insights and industry news.</p>
         </section>
-        <section>
-            <h2>Categories</h2>
-            <ul>
-                <li>Spectral Intelligence</li>
-                <li>Remote Progress Monitoring</li>
-                <li>Digital Twin</li>
-                <li>Aerial Mapping</li>
-                <li>Industry News</li>
-            </ul>
-        </section>
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Blog Posts Grid -->
+            <section class="flex-1">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Latest Posts</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Spectral Intelligence" class="h-40 w-full object-cover">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Spectral Intelligence in Infrastructure</h3>
+                            <p class="text-gray-600 mb-4 flex-1">How advanced spectral analysis is transforming infrastructure monitoring and maintenance.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline mt-auto">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Remote Progress Monitoring" class="h-40 w-full object-cover">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Remote Progress Monitoring: A Game Changer</h3>
+                            <p class="text-gray-600 mb-4 flex-1">Discover how remote sensing and AI are revolutionizing project progress tracking.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline mt-auto">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Digital Twin" class="h-40 w-full object-cover">
+                        <div class="p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Digital Twin: The Future of Asset Management</h3>
+                            <p class="text-gray-600 mb-4 flex-1">An introduction to digital twins and their impact on asset lifecycle management.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline mt-auto">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Categories Sidebar -->
+            <aside class="w-full md:w-64">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4">Categories</h2>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-700 hover:underline flex items-center"><i class="fas fa-brain mr-2"></i>Spectral Intelligence</a></li>
+                        <li><a href="#" class="text-blue-700 hover:underline flex items-center"><i class="fas fa-satellite-dish mr-2"></i>Remote Progress Monitoring</a></li>
+                        <li><a href="#" class="text-blue-700 hover:underline flex items-center"><i class="fas fa-cube mr-2"></i>Digital Twin</a></li>
+                        <li><a href="#" class="text-blue-700 hover:underline flex items-center"><i class="fas fa-map-marked-alt mr-2"></i>Aerial Mapping</a></li>
+                        <li><a href="#" class="text-blue-700 hover:underline flex items-center"><i class="fas fa-newspaper mr-2"></i>Industry News</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
     </main>
 </body>
 </html>
