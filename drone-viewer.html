@@ -36,6 +36,29 @@
       position: relative;
       z-index: 3;
     }
+    @media (max-width: 900px) {
+      model-viewer {
+        /* Zoom out more on smaller screens */
+        --mv-orbit-distance: 1.2m;
+      }
+      .container-3d {
+        height: 70vh;
+      }
+      .background-text {
+        font-size: 8vw;
+      }
+    }
+    @media (max-width: 600px) {
+      model-viewer {
+        --mv-orbit-distance: 1.6m;
+      }
+      .container-3d {
+        height: 50vh;
+      }
+      .background-text {
+        font-size: 6vw;
+      }
+    }
    
   </style>
 </head>
@@ -79,20 +102,31 @@
       const rect = viewer.getBoundingClientRect();
       const x = ((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2); // -1 (left) to 1 (right)
       const y = ((e.clientY - rect.top) - rect.height / 2) / (rect.height / 2); // -1 (top) to 1 (bottom)
+      // Responsive zoom: farther on small screens
+      let orbitDistance = 0.8;
+      if (window.innerWidth < 600) {
+        orbitDistance = 1.6;
+      } else if (window.innerWidth < 900) {
+        orbitDistance = 1.2;
+      }
       // Azimuth: left/right, Polar: up/down, both sticky to center
-      // Limit horizontal rotation to 180 degrees total (-90 to 90)
-      const limitedX = Math.max(-0.5, Math.min(0.5, x)); // clamp x to [-0.5, 0.5]
-      const azimuth = -limitedX * 180; // -90deg (right) to 90deg (left)
-      const polar = 90 - y * 60; // Invert vertical rotation: cursor up rotates drone up
-      viewer.cameraOrbit = `${azimuth}deg ${polar}deg 0.8m`;
+      const limitedX = Math.max(-0.5, Math.min(0.5, x));
+      const azimuth = -limitedX * 180;
+      const polar = 90 - y * 60;
+      viewer.cameraOrbit = `${azimuth}deg ${polar}deg ${orbitDistance}m`;
       viewer.cameraTarget = `0 0.15m 0`;
-      // Set target translation for parallax effect (max 20px movement)
       targetTranslateX = x * 20;
       targetTranslateY = y * 20;
     });
 
     viewer.addEventListener('mouseleave', () => {
-      viewer.cameraOrbit = `0deg 90deg 0.8m`;
+      let orbitDistance = 0.8;
+      if (window.innerWidth < 600) {
+        orbitDistance = 1.6;
+      } else if (window.innerWidth < 900) {
+        orbitDistance = 1.2;
+      }
+      viewer.cameraOrbit = `0deg 90deg ${orbitDistance}m`;
       viewer.cameraTarget = `0 0.15m 0`;
       viewer.autoRotate = false;
       targetTranslateX = 0;
