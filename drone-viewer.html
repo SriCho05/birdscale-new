@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Drone GLB Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: transparent; }
+    model-viewer { width: 100vw; height: 100vh; background: transparent !important; }
+    .background-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-family: 'Zen Dots', sans-serif;
+      font-size: 10vw;
+      color: #a60000;
+      letter-spacing: 0.1em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.35), 0 1px 0 #000;
+      opacity: 0.85;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 400;
+      mix-blend-mode: multiply;
+    }
+    
+    .container-3d {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    model-viewer {
+      position: relative;
+      z-index: 3;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="container-3d">
+    <div class="background-text">BIRDSCALE</div>
+    <section class="background-grey-section"></section>
+    <model-viewer 
+      src="animated_drone.glb"
+      camera-controls
+      disable-zoom
+      auto-rotate
+      autoplay
+      interaction-prompt="none"
+      interaction-prompt-threshold="0"
+      style="background: transparent;"
+      exposure="1"
+      shadow-intensity="1"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      alt="A 3D model of a drone"    id="droneModel"
+      camera-orbit="0deg 90deg 0.4m"
+      field-of-view="45deg"
+      min-camera-orbit="auto 30deg 0.3m"
+      max-camera-orbit="auto 150deg 0.6m"
+      camera-target="0 0.15m 0"
+    >
+    </model-viewer>
+  </div>
+  <script>
+    // Make the drone follow the mouse cursor in any direction (full orbit), sticky to center
+    const viewer = document.getElementById('droneModel');
+    viewer.autoRotate = false;
+
+    let targetTranslateX = 0;
+    let targetTranslateY = 0;
+    let currentTranslateX = 0;
+    let currentTranslateY = 0;
+
+    viewer.addEventListener('mousemove', (e) => {
+      const rect = viewer.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2); // -1 (left) to 1 (right)
+      const y = ((e.clientY - rect.top) - rect.height / 2) / (rect.height / 2); // -1 (top) to 1 (bottom)
+      // Azimuth: left/right, Polar: up/down, both sticky to center
+      // Limit horizontal rotation to 180 degrees total (-90 to 90)
+      const limitedX = Math.max(-0.5, Math.min(0.5, x)); // clamp x to [-0.5, 0.5]
+      const azimuth = -limitedX * 180; // -90deg (right) to 90deg (left)
+      const polar = 90 - y * 60; // Invert vertical rotation: cursor up rotates drone up
+      viewer.cameraOrbit = `${azimuth}deg ${polar}deg 0.8m`;
+      viewer.cameraTarget = `0 0.15m 0`;
+      // Set target translation for parallax effect (max 20px movement)
+      targetTranslateX = x * 20;
+      targetTranslateY = y * 20;
+    });
+
+    viewer.addEventListener('mouseleave', () => {
+      viewer.cameraOrbit = `0deg 90deg 0.8m`;
+      viewer.cameraTarget = `0 0.15m 0`;
+      viewer.autoRotate = false;
+      targetTranslateX = 0;
+      targetTranslateY = 0;
+    });
+
+    // Prevent zoom/scroll on 3D model but keep hover animation
+    viewer.addEventListener('wheel', (e) => {
+      // Only prevent default if user is trying to zoom (ctrl+wheel or pinch-zoom)
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+      // Otherwise, allow normal scroll
+    }, { passive: false });
+
+    // Prevent pinch-zoom and double-tap zoom on touch devices
+    viewer.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+    viewer.addEventListener('gesturestart', (e) => {
+      e.preventDefault();
+    });
+    viewer.addEventListener('gesturechange', (e) => {
+      e.preventDefault();
+    });
+    viewer.addEventListener('gestureend', (e) => {
+      e.preventDefault();
+    });
+
+    function animate() {
+      // Smoothly interpolate current translation towards target translation
+      currentTranslateX += (targetTranslateX - currentTranslateX) * 0.1;
+      currentTranslateY += (targetTranslateY - currentTranslateY) * 0.1;
+      // Center the drone position by offsetting the translation
+      const centerOffsetX = 0;
+      const centerOffsetY = 0;
+      viewer.style.transform = `translate3d(${currentTranslateX + centerOffsetX}px, ${currentTranslateY + centerOffsetY}px, 0)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
