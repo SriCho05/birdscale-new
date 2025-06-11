@@ -46,3 +46,31 @@ p {
   animation: bentGrid 0.7s cubic-bezier(.4,0,.2,1);
   z-index: 2;
 }
+
+/* Dropdown menu visibility and animation */
+.dropdown-content {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, pointer-events 0.3s;
+  z-index: 100;
+}
+.nav-dropdown.open .dropdown-content,
+.nav-dropdown:focus-within .dropdown-content,
+.dropdown-content.open {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Optional: style for dropdown links on hover */
+.dropdown-content a:hover, .dropdown-content a:focus {
+  background: #2563eb;
+  color: #fff;
+}
+.dropdown-content a i {
+  transition: color 0.2s;
+}
+.dropdown-content a:hover i, .dropdown-content a:focus i {
+  color: #fff;
+}
