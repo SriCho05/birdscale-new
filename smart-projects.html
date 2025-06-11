@@ -102,6 +102,13 @@
             </div>
         </section>
     </main>
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+    <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer-include').innerHTML = html; });
+    </script>
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

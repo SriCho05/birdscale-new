@@ -272,10 +272,12 @@
         mobileNav.classList.toggle('hidden');
     });
     </script>
-    <footer class="w-full bg-gray-900 text-white py-6 mt-12 fixed left-0 right-0 bottom-0 z-50">
-      <div class="container mx-auto px-4 text-center">
-        &copy; 2025 BirdScale. All rights reserved.
-      </div>
-    </footer>
+    <!-- Footer Include -->
+<div id="footer-include"></div>
+<script>
+fetch('footer.html')
+  .then(res => res.text())
+  .then(html => { document.getElementById('footer-include').innerHTML = html; });
+</script>
 </body>
 </html>
