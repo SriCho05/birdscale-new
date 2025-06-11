@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Header: modular glassmorphic fragment include -->
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-[100] w-[95vw] max-w-5xl rounded-3xl bg-white/30 backdrop-blur-lg shadow-xl border border-white/40 flex flex-col items-center px-6 py-4 glass-header">
+        <div class="container mx-auto flex justify-between items-center w-full">
             <a href="index.html">
-                <img src="birdscale_logo_square.png" alt="BirdScale Logo" class="h-12 w-auto mr-3" />
+                <img src="birdscale_logo_square.png" alt="BirdScale Logo" class="h-16 w-auto mr-3" />
             </a>
             <nav class="hidden md:flex items-center relative w-full justify-center">
                 <div class="flex w-full max-w-5xl justify-between items-center">
-                    <a href="index.html" class="text-dark hover:text-primary font-medium">Home</a>
-                    <a href="industries.html" class="text-dark hover:text-primary font-medium">Industries</a>
-                    <a href="solutions.html" class="text-dark hover:text-primary font-medium">Solutions</a>
-                    <a href="aerial-mapping.html" class="text-dark hover:text-primary font-medium">Aerial Mapping</a>
-                    <a href="smart-projects.html" class="text-dark hover:text-primary font-medium">Smart Projects</a>
-                    <a href="blog.html" class="text-dark hover:text-primary font-medium">Blog</a>
-                    <a href="team.html" class="text-dark hover:text-primary font-medium">Team BirdScale</a>
+                    <a href="#hero" class="text-dark hover:text-primary font-medium px-4">Home</a>
+                    <a href="industries.html" class="text-dark hover:text-primary font-medium px-4">Industries</a>
+                    <a href="solutions.html" class="text-dark hover:text-primary font-medium px-4">Solutions</a>
+                    <a href="aerial-mapping.html" class="text-dark hover:text-primary font-medium px-4">Aerial Mapping</a>
+                    <a href="smart-projects.html" class="text-dark hover:text-primary font-medium px-4">Smart Projects</a>
+                    <a href="blog.html" class="text-dark hover:text-primary font-medium px-4">Blog</a>
+                    <a href="team.html" class="text-dark hover:text-primary font-medium px-4">Team BirdScale</a>
                 </div>
             </nav>
             <button id="nav-toggle" class="md:hidden text-dark text-2xl">
@@ -31,8 +31,8 @@
             </button>
         </div>
         <!-- Mobile nav -->
-        <nav id="mobile-nav" class="md:hidden hidden flex-col bg-white shadow-lg px-4 pb-4">
-            <a href="index.html" class="block py-2 text-dark hover:text-primary font-medium">Home</a>
+        <nav id="mobile-nav" class="md:hidden hidden flex-col bg-white shadow-lg px-4 pb-4 rounded-2xl mt-2">
+            <a href="#hero" class="block py-2 text-dark hover:text-primary font-medium">Home</a>
             <a href="industries.html" class="block py-2 text-dark hover:text-primary font-medium">Industries</a>
             <a href="solutions.html" class="block py-2 text-dark hover:text-primary font-medium">Solutions</a>
             <a href="aerial-mapping.html" class="block py-2 text-dark hover:text-primary font-medium">Aerial Mapping</a>
@@ -113,6 +113,19 @@
         </div>
     </footer>
     <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
         // Hamburger menu toggle for mobile nav
         const navToggle = document.getElementById('nav-toggle');
         const mobileNav = document.getElementById('mobile-nav');
